@@ -1,0 +1,42 @@
+{% load  static %}
+
+
+<!Doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  {% block stylesheets %}
+
+  <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+  
+
+  {% endblock stylesheets %}
+  <title>ELMS</title>
+</head>
+{% include "_header.html" %}
+
+<body style="background-image: linear-gradient(to left, #8e9eab , #eef2f3);">
+  <main role="main" class="container-fluid">
+    <div style="padding-top: 50px;">
+      
+      {% block content %}{% endblock %}
+    </div>
+  </main>
+  {% block scripts %}
+  <script src="{% static 'assets/js/jquery-3.2.1.min.js' %}"></script>
+  <script src="{% static 'assets/js/popper.min.js' %}"></script>
+  <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+
+  <script src="{% static 'assets/js/main.js' %}"></script>
+  {% endblock scripts %}
+  {% block extrascripts %}{% endblock extrascripts %}
+  
+</body>
+
+{% block footer %}
+{% endblock %}
+</html>

@@ -1,0 +1,21 @@
+<h6 class="text-sm-left">Summary</h6>
+<ul class="list-group">
+    <div class="p-0 list-group-item">
+        <div class="p-1 d-flex flex-row">
+            <small class="pl-2 pt-1">Compliant</small>
+            <div class="pl-5"><span class="badge badge-success badge-pill"> {{ compliant }}</span></div>
+        </div>
+        <span class="pl-3 font-weight-bold"> {{compliant_per}}</span>
+    </div>
+    <div class=" p-0 list-group-item">
+        <div class="p-1 d-flex flex-row">
+            <small class="pl-2 pt-1"> Non compliant</small>
+            <div class="pl-3"><span class="badge badge-danger badge-pill">{{ non_compliant }}</span></div>
+        </div>
+        <span class="pl-3 font-weight-bold">{{non_compliant_per}}</span>
+    </div>
+    <li class="list-group-item d-flex justify-content-center">
+        <span>Total:</span> <span class="font-weight-bold">{{ total }}</span>
+
+    </li>
+</ul>

@@ -1,0 +1,13 @@
+{% if messages %}
+<div class="container " id="messagesid">
+    <ul class="list-group">
+        {% for message in messages %}
+        {% if message.tags == 'error' %}
+        <li class="list-group-item list-group-item-danger text-uppercase text-black font-weight-bold text-center">{{ message }}</li>
+        {% else %}
+        <li class="list-group-item list-group-item-{{message.tags}} text-uppercase text-black font-weight-bold text-center">{{ message }}</li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}

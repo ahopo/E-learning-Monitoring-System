@@ -1,0 +1,13 @@
+<form method="GET">
+    <h6 class="text-sm-left pt-2">Filter by Section</h6>
+    <ul class="list-group border p-1">
+        {% for section in sections %}
+        {% if section_id == section.id %}
+        <a class="btn btn-danger" href="?q={{ compliantcourses.0.course.id }}&s={{ section.id }}">{{section.name}}</a>
+        {% else %}
+        <a class="btn btn-white text-light "
+            href="?q={{ compliantcourses.0.course.id }}&s={{ section.id }}">{{section.name}}</a>
+        {% endif %}
+        {% endfor%}
+    </ul>
+</form>

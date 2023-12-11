@@ -1,0 +1,26 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.pagination a {  
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+
+.footer {
+  /* position: absolute; */
+  bottom: 0;
+  width: 100%; 
+  border-top: 1px groove; 
+  height: 2.5rem; 
+}

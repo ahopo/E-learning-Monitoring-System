@@ -1,0 +1,20 @@
+<nav class="navbar navbar-light mb-2 fixed-top "
+  style="background-image: linear-gradient(to right, #ED213A , #93291E);">
+  <a class="navbar-brand text-white" href="/main">E-Learning Monitoring <small class="text-white font-weight-bold">{{ title }}</small></a>
+  
+    {% if incompliant %}
+       {% include "_search_compliant.html" %}
+    {% elif index %}
+      {% include "_search_index.html" %}
+    {% endif %}
+  <div class="float-right">
+    <!-- <a class="btn btn-white  text-white"  href="/main">
+      <img alt="Qries" src="/static/icon/home.png"
+      width="20" height="20"> </a>     -->
+
+      <a href="/main" class="btn btn-white  text-white">
+        Home <i class="fa fa-home"></i>
+      </a>
+  </div>
+  
+</nav> 

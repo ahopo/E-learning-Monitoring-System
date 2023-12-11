@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load bootstrap_pagination %}
+{% block content %}
+
+<div class="row pt-2">
+    
+    <div class="col-10 pl-5">
+        {% include '_messages.html' %}         
+        {% include "_paginator.html" %}
+        <table class="table table-striped " id="comtable">
+            <thead>
+                <tr>
+                    <th scope="col text-center">Employee ID</th>
+                    <th scope="col text-center">Full Name</th>
+                    <th scope="col text-center">Section</th>
+                    <th scope="col text-center">Status</th>
+                    <th scope="col text-center"></th>
+                </tr>
+            </thead>
+            <tbody style="overflow-y: scroll;">
+                {% for comcrs in compliantcourses %}
+                <tr>
+                    <th scope="row"><span class="font-weight-normal">{{ comcrs.employee_id }}</span></th>
+                    <td><span class="font-weight-normal">{{ comcrs.employee_name }}
+
+                    </td>
+                    <td>{{ comcrs.section }}</td>
+                    {% if comcrs.status == '1' %}
+                    <td><span class="text-success">Compliant</span></td>
+                    <td class="text-center">
+                        <h6 class="badge badge-success"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+                        </h6>
+                        {% else %}
+                    <td><span class="text-danger">Non-compliant</span></td>
+                    <td><button value="{{  comcrs.id }}.{{  comcrs.employee_name }} " class="btn btn-info"
+                            data-toggle="modal" data-target="#exampleModal"><i class="fa fa-file-pdf-o"
+                                aria-hidden="true"></i>
+                            <smal>Upload certificate</smal>
+                        </button></td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% include "_paginator.html" %}
+    </div>
+
+    <div class="col-2 ">
+        <div class="mb-2 mt-4" style="position : fixed;">
+            {% include '_summary.html' %}
+            {% include '_filter_by_section.html'%}
+        </div>
+    </div>
+</div>
+{% include '_modal.html' %}
+{% endblock %}
